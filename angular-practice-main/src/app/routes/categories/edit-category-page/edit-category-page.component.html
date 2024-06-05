@@ -1,0 +1,9 @@
+<app-basic-layout>
+<h1>Edit Category Page</h1>
+    <app-table 
+    [items]="categories"
+    [columns]="categoryColumns"
+    (buttonClick)="onButtonClick($event)"
+    ></app-table>
+</app-basic-layout>
+

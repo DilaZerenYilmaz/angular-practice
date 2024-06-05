@@ -1,0 +1,37 @@
+@if (product) {
+<div class="row">
+    <div class="col">
+        <img src="https://via.placeholder.com/500" [alt]="product.name"
+        class="rounded img-fluid"/>
+    </div>
+    <div class="col">
+        <h2>{{ product.name }}</h2>
+        <p><strong>Quantity Per Unit: </strong>{{ product.quantityPerUnit }}</p>
+        <p><strong>Units In Stock: </strong>{{ product.unitsInStock }}</p>
+        <p class="display-6"><strong>Unit Price: </strong>{{ product.unitPrice | currency }}</p>
+        <button (click)="onaAddToCart()" class="btn btn-primary">Add to Card</button>
+    </div>
+</div>
+} @else {
+    <div class="row h-100">
+        <div class="col h-100">
+            <app-placeholder></app-placeholder>
+        </div>
+        <div class="col">
+            <h2>
+                <app-placeholder></app-placeholder>
+            </h2>
+            <p>
+                <app-placeholder></app-placeholder>
+            </p>
+            <p>
+                <app-placeholder></app-placeholder>
+            </p>
+            <p>
+                <app-placeholder></app-placeholder>
+            </p>
+            
+            <app-button></app-button>
+        </div>
+    </div>
+}

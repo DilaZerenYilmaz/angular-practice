@@ -1,0 +1,13 @@
+<form [formGroup]="newCategoryFormGroup" (submit)="onFormSubmit()">
+<div>
+    <label for="nameInput">Name:</label>
+    <input id="nameInput" type="text" formControlName="name" class="m-2">
+</div>
+
+<div>
+    <label for="descriptionInput">Description:</label>
+    <input id="descriptionInput" type="text" formControlName="description" class="m-2">
+</div>
+
+<button type="submit">Add</button>
+</form>

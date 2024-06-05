@@ -1,0 +1,8 @@
+<div class="card">
+    <img [src]="imageSrc" class="card-img-top" [alt]="imageAlt" [height]="imageHeight">
+    <div class="card-body">
+      <h5 class="card-title">{{ title }}</h5>
+      <p class="card-text">{{ description }}</p>
+      <button type="button" [routerLink]="buttonRouterLink" class="btn btn-primary" (click)="onButtonClick()"> {{ buttonLabel }} </button>
+    </div>
+</div>

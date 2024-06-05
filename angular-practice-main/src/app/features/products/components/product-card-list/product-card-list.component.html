@@ -1,0 +1,13 @@
+<div class="row">
+    @for (item of filteredProductList; track $index) {
+    <app-card 
+    [title]="item.name" 
+    [buttonLabel]="'View ' + (item.unitPrice | currency)"
+    (buttonClick)="onViewProduct(item)"
+    [description]="item.quantityPerUnit"
+    imageSrc="https://via.placeholder.com/200" 
+    [imageAlt]="item.name"
+    class="col-12 col-md-6 col-lg-4 my-2"
+    ></app-card>
+    }
+</div>

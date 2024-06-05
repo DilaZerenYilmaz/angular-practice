@@ -1,0 +1,21 @@
+<app-basic-layout>
+    <div class="d-flex flex-column justtify-content-center align-items-center">
+        <h1>Welcome!</h1>
+        <p *appWelcome="5000">This content changed after 3000ms !!! </p>
+        <small *appMultiple=3>Our products are fresh!</small>
+        <a routerLink="/auth/login">Go to login</a>
+    </div>
+
+    <div class="row">
+        <aside class="col-3">
+            <h1 style="font-size: 1.5rem">Categories</h1>
+            <app-category-list-group [initialSelectedCategoryId]="selectedCategoryId" (changeSelect)="onChangeCategorySelect($event)"></app-category-list-group> 
+        </aside>
+
+        <section class="col">
+            <h1 style="font-size: 1.5rem">Products</h1>
+            <app-product-card-list [filterByCategoryId]="selectedCategoryId"
+            (viewProduct)="onViewProduct($event)"></app-product-card-list>
+        </section>
+    </div>
+</app-basic-layout>

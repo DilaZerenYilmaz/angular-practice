@@ -1,0 +1,32 @@
+<app-basic-layout>
+    <form [formGroup]="saveCategoryForm" (submit)="saveName()">
+
+    <h2>Edit Category</h2>
+    <br>
+    <div class="input-group mb-3">
+        <strong class="m-2">Category Name: </strong>
+        <input type="text" class="form-control" [value]='category?.name' aria-label="Recipient's username" aria-describedby="button-addon2"
+        formControlName="name" appNoCharacterInput>
+    </div>
+
+    @if (saveCategoryForm.get('name')?.invalid && saveCategoryForm.get('name')?.touched) {
+        <div class="m-1">
+            <strong>- {{ saveCategoryForm.get('name')?.errors | appFormControlErrorMessage }}</strong> 
+        </div>
+    }
+    <hr>
+    <div class="input-group mb-3">
+        <strong class="m-2">Category Description: </strong>
+        <input type="text" class="form-control" [value]='category?.description' aria-label="Recipient's username" aria-describedby="button-addon2"
+        formControlName="description" appNoCharacterInput>
+    </div>
+
+    @if (saveCategoryForm.get('description')?.invalid && saveCategoryForm.get('description')?.touched) {
+        <div class="m-1">
+            <strong>- {{ saveCategoryForm.get('description')?.errors | appFormControlErrorMessage }}</strong> 
+        </div>
+    }
+    <br>
+    <button appButton="yellow" type="submit" [disabled]="!saveCategoryForm.valid">Save</button>
+</form>
+</app-basic-layout>

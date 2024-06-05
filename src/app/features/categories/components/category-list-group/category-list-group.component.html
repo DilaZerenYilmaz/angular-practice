@@ -1,0 +1,4 @@
+<app-list-group 
+[items]="categoryListGroupItems"
+[selectedItemId]="initialSelectedCategoryId?.toString() ?? null"
+(changeSelect)="onChangeSelect($event)"></app-list-group>
